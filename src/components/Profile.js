@@ -1,15 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React from "react";
+import profile from "../Images/no-avatar.jpg";
 
 export default function Profile() {
   return (
-    <div class='px-5 py-5'>
-    <div class='mb-10 sticky top-0 z-10'>
-      <p class="px-5 font-semibold text-slate-500">
-        Profile / <Link to="/">Main Dashboard</Link>
-      </p>
-      <h1 class="px-5 text-4xl font-bold">Profile Page</h1>
+    <div className="flex flex-col">
+      <div className="px-10 py-10 flex-col ">
+        <img src={profile} alt="profile_image" class="w-20 h-20" />
+      </div>
+      <div className="px-10 mt-20  flex-col">
+        <h4 className="mb-5">Full Name:</h4>
+        <h4 className="mb-5">Full Name:</h4>
+        <h4 className="mb-5">Full Name:</h4>
+        <h4 className="mb-5">Full Name:</h4>
+        <h4 className="mb-5">Full Name:</h4>
+        <h4 className="mb-5">Full Name:</h4>
+
+        <button className="py-2 px-4 w-1/2 bg-gray-800 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+          Edit Profile
+        </button>
       </div>
     </div>
-  )
+  );
 }

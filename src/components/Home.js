@@ -1,29 +1,52 @@
-import React from "react";
+import React, {useState} from "react";
 import SideMenu from "./SideMenu";
-import { Routes,  Route, Link } from "react-router-dom";
-import Users from "./Users";
-import AdminHome from "./AdminHome";
-import AccountManage from "./Account_Manage";
-import ResetPin from "./Reset_pin";
-import Transactions from "./Transactions";
-import Profile from "./Profile";
+import { Routes,  Route} from "react-router-dom";
+import UserHome from "./Dashboard";
+import History from "./History";
+import MyTranscripts from "./MyTranscripts";
+import NewTranscript from "./NewTranscript";
+import Login from "./Login";
+import Register from "./Register";
+import Track from "./Track";
+import HolderInfo from "./HolderInfo";
+import RequestDetails from "./RequestDetails";
+import Profile from "./profile";
 
 export default function Home() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // track whether user is logged in or not
+
+  const handleLogin = () => {
+    setIsLoggedIn(true); // set isLoggedIn to true when user logs in
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false); // set isLoggedIn to false when user logs out
+  };
+
   return (
     <div>
-      <div class="flex">
-        <SideMenu />
-        <div class="flex-1">
-          <Routes>
-            <Route path="/" element={<AdminHome />} />
-            <Route path="/users" element={<Users />} />
-            <Route path="/account_manage" element={<AccountManage />} />
-            <Route path="/reset_pin" element={<ResetPin />} />
-            <Route path="/transactions" element={<Transactions />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
+      {isLoggedIn ? (
+        <div class="flex">
+          <SideMenu onLogOut={handleLogout} />
+          <div class="flex-1">
+            <Routes>
+              <Route path="/" element={<UserHome />} />
+              <Route path="/my_transcripts" element={<MyTranscripts />} />
+              <Route path="/history" element={<History />} />
+              <Route path="/track" element={<Track />} />
+              <Route path="/new_transcripts" element={<NewTranscript />} />
+              <Route path="/info" element={<HolderInfo />} />
+              <Route path="/request_details" element={<RequestDetails />} />
+              <Route path="/profile" element={<Profile />} />
+            </Routes>
+          </div>
         </div>
-      </div>
+      ) : (
+        <Routes>
+        <Route path="/" element={<Login onLogin={handleLogin} /> } />
+        <Route path="/register" element={<Register /> } />  // show login component if user is not logged in
+        </Routes>
+      )}
     </div>
   );
 }

@@ -1,23 +1,22 @@
 import React from "react";
 import {
-  FaUsers,
   FaUser,
-  FaCog,
-  FaUsersSlash,
-  FaKey,
+  FaHistory,
+  FaInbox,
   FaHome,
   FaSignOutAlt,
-  FaExchangeAlt
+  FaChartLine
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-export default function SideMenu() {
+export default function SideMenu(onLogOut) {
+
+
   return (
     <div className="w-64 h-screen bg-gray-800">
       <div className="flex-1 p-6 mb-40">
         <div className="mb-14">
-        <p class='text-white text-xl mb-2'>Admin Dashboard</p>
-        <p class=' text-slate-500 text-1xl '>Mukhtar Mahmud</p>
+        <p class='text-white text-xl mb-2'>RecordDigita</p>
         </div>
         
         <ul>
@@ -27,30 +26,20 @@ export default function SideMenu() {
             </Link>
           </li>
           <li className="mb-7">
-            <Link to="/users" className="flex items-center text-white">
-              <FaUser className="mr-2" /> Manage Users
+            <Link to="/my_transcripts" className="flex items-center text-white">
+              <FaInbox className="mr-2" /> My Transcripts
             </Link>
           </li>
           <li className="mb-7">
-          <Link to="/transactions" className="flex items-center text-white">
-            <FaExchangeAlt className="mr-2" /> Transactions
+          <Link to="/track" className="flex items-center text-white">
+            <FaChartLine className="mr-2" /> Track
           </Link>
         </li>
           <li className="mb-7">
-            <Link to="/account_manage" className="flex items-center text-white">
-              <FaUsersSlash className="mr-2" /> Account freeze / unfreeze
-            </Link>
-          </li>
-          <li className="mb-7">
-            <Link to="/reset_pin" className="flex items-center text-white">
-              <FaKey className="mr-2" /> PIN RESET
-            </Link>
-          </li>
-          <li className="mb-7">
-            <Link to="/" className="flex items-center text-white">
-              <FaCog className="mr-2" /> Manage Admins
-            </Link>
-          </li>   
+          <Link to="/history" className="flex items-center text-white">
+            <FaHistory className="mr-2" /> History
+          </Link>
+        </li> 
           <li className="mb-7">
           <Link to="/profile" className="flex items-center text-white">
             <FaUser className="mr-2" /> Profile
@@ -60,7 +49,7 @@ export default function SideMenu() {
       </div>
       <div class="p-6">
         <Link to="/" className="flex items-center text-white">
-          <FaSignOutAlt className="mr-2" /> Sign Out
+          <FaSignOutAlt onClick={onLogOut} className="mr-2" /> Sign Out
         </Link>
       </div>
     </div>
