@@ -8,15 +8,16 @@ import {
   TableRow,
   TableCell,
 } from "@windmill/react-ui";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaEllipsisV } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const docs = [
   {
-    id: "QwdSKDK743849",
+    id: "OApkdd6K743849",
     DateSubmitted: "11-07-2022",
-    Request_type: "Self",
-    Degree: "Bsc",
-    status: <FaDownload className="ml-2" />,
+    Degree: "Msc",
+    Request_type: "Other",
+    status: "In progress",
   },
 ];
 
@@ -24,7 +25,7 @@ export default function History() {
   return (
     <div className="px-5 py-5">
       <Header />
-      <h2 className="font-bold text-2xl">My Approved Transcripts</h2>
+      <h2 className="font-bold text-2xl">Request History</h2>
       <div className="w-full lg: py-8">
         <TableContainer>
           <Table className="w-full whitespace-nowrap">
@@ -34,16 +35,16 @@ export default function History() {
                   Reference id
                 </TableCell>
                 <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left text-xs font-medium text-black uppercase tracking-wider">
-                  Date Recieved
-                </TableCell>
-                <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left text-xs font-medium text-black uppercase tracking-wider">
-                  Degree
+                  Date Submitted
                 </TableCell>
                 <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left text-xs font-medium text-black uppercase tracking-wider">
                   Request Type
                 </TableCell>
                 <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left text-xs font-medium text-black uppercase tracking-wider">
-                  Action
+                  Degree
+                </TableCell>
+                <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left text-xs font-medium text-black uppercase tracking-wider">
+                  Status
                 </TableCell>
               </TableRow>
             </TableHeader>
@@ -56,16 +57,29 @@ export default function History() {
                     </div>
                   </TableCell>
                   <TableCell>
-                    <span className=" ml-2 text-1xl">{doc.DateSubmitted}</span>
-                  </TableCell>
-                  <TableCell>
-                    <span className="text-1xl ml-2">{doc.Degree}</span>
+                    <span className="text-1xl ml-2">{doc.DateSubmitted}</span>
                   </TableCell>
                   <TableCell>
                     <span className="text-1xl ml-2">{doc.Request_type}</span>
                   </TableCell>
                   <TableCell>
-                    <span className="flex flex-row items-center justify-between text-1xl ml-2"><span className="text-1xl text-green-500">Approved</span><span className="w-5 h-5">{doc.status}</span></span>
+                    <span className="text-1xl ml-2">{doc.Degree}</span>
+                  </TableCell>
+                  <TableCell className="flex flex-row justify-between">
+                    <span
+                      className={
+                        doc.status == "In progress"
+                          ? "text-1xl text-yellow-500 ml-2"
+                          : "text-1xl text-red-500 ml-2"
+                      }
+                    >
+                      {doc.status}
+                    </span>
+                    <Link to="/track">
+                      <button className="py-2 px-4 bg-[#012756]  text-white rounded-md border border-w-1 border-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                        View
+                      </button>
+                    </Link>
                   </TableCell>
                 </TableRow>
               ))}

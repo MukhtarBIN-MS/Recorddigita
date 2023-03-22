@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
 import Header from "./Header";
@@ -44,14 +44,14 @@ function HolderInfo() {
         <FaArrowLeft className="mr-2" onClick={handleGoBack} />{" "}
         <p>Transcript Request</p>
       </div>
-      <div className=" w-1/2 mt-5 flex flex-col">
+      <div className="w-full mt-5 flex flex-col items-center justify-center">
         <h2 className="text-2xl items-start font-bold mb-4">Holder Info</h2>
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-        <label for='institution'>Select Institution</label>
+          <label for="institution">Select Institution</label>
           <select
             value={selectedValue}
             onChange={handleSelectChange}
-            className=" w-full border border-gray-400 rounded p-2 mb-2"
+            className="w-full border border-gray-400 rounded p-2 mb-2"
           >
             <option value="">Select an option</option>
             <option value="option1">Bsc</option>
@@ -94,27 +94,27 @@ function HolderInfo() {
             className="border border-gray-300 rounded-md px-3 py-2"
           />
           <label htmlFor="file" className="font-medium">
-          Upload Doc...
-        </label>
-        <input
-          type="file"
-          id="file"
-          name="file"
-          onChange={handleFileChange}
-          className="border border-gray-300 rounded-md px-3 py-2"
-        />
+            Upload Doc...
+          </label>
+          <input
+            type="file"
+            id="file"
+            name="file"
+            onChange={handleFileChange}
+            className="border border-gray-300 rounded-md px-3 py-2"
+          />
         </form>
 
         {showButton && (
-            <div>
-         <Link to='/request_details'>
-          <button
-            onClick={handleButtonClick}
-            className="mt-3 bg-blue-500 hover:bg-blue-700 flex items-center justify-center text-white font-bold py-2 px-4 rounded"
-          >
-            Next
-          </button>
-          </Link>
+          <div>
+            <Link to="/request_details">
+              <button
+                onClick={handleButtonClick}
+                className="mt-3 bg-blue-500 hover:bg-blue-700 flex items-center justify-center text-white font-bold py-2 px-4 rounded"
+              >
+                Next
+              </button>
+            </Link>
           </div>
         )}
       </div>

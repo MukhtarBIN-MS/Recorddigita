@@ -11,6 +11,7 @@ import Track from "./Track";
 import HolderInfo from "./HolderInfo";
 import RequestDetails from "./RequestDetails";
 import Profile from "./profile";
+import TrackList from "./TrackList";
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // track whether user is logged in or not
@@ -38,6 +39,7 @@ export default function Home() {
               <Route path="/info" element={<HolderInfo />} />
               <Route path="/request_details" element={<RequestDetails />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/track_list" element={<TrackList />} />
             </Routes>
           </div>
         </div>

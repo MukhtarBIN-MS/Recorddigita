@@ -1,10 +1,19 @@
 import React from "react";
 import Header from "./Header";
+import {Link,  useLocation, useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function Track() {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
   return (
     <div className="px-5 py-5">
       <Header />
+      <div className="flex flex-row items-center">
+      <FaArrowLeft className="mr-2" onClick={handleGoBack} /> <p>Track List</p></div>
       <div className="flex flex-col w-full h-full">
         <div className="flex-1 w-full h-full bg-white rounded-lg shadow-md p-6"></div>
         <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 mt-20 h-full flex-2 w-full bg-white rounded-lg shadow-md p-6">

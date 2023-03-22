@@ -44,7 +44,7 @@ function HolderInfo() {
         <FaArrowLeft className="mr-2" onClick={handleGoBack} />{" "}
         <p>Transcript Request</p>
       </div>
-      <div className=" w-1/2 mt-5 flex flex-col">
+      <div className="mt-5 flex flex-col items-center justify-center">
         <h2 className="text-2xl items-start font-bold mb-4">Holder Info</h2>
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <label for="institution">Request for</label>
@@ -55,7 +55,7 @@ function HolderInfo() {
           >
             <option value="">Select an option</option>
             <option value="option1">Self</option>
-            <option value="option2">Other</option>
+            <option value="option2">Institution</option>
           </select>
           <label for=" institution">Mode of delivery</label>
           <select
@@ -71,6 +71,28 @@ function HolderInfo() {
               Courirer Services & Upload To My Profile
             </option>
           </select>
+          <label htmlFor="name" className="font-medium">
+          Reciever Email
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="border border-gray-300 rounded-md px-3 py-2"
+        />
+        <label htmlFor="name" className="font-medium">
+        Reciever Address
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="border border-gray-300 rounded-md px-3 py-2"
+      />
         </form>
 
         {showButton && (
@@ -79,7 +101,7 @@ function HolderInfo() {
               onClick={handleButtonClick}
               className="mt-3 bg-blue-500 hover:bg-blue-700 flex items-center justify-center text-white font-bold py-2 px-4 rounded"
             >
-              Next
+              Submit
             </button>
           </div>
         )}

@@ -7,7 +7,7 @@ import {
   TableRow,
   TableCell,
 } from "@windmill/react-ui";
-import { FaPlus, FaEllipsisV  } from "react-icons/fa";
+import { FaPlus, FaEllipsisV } from "react-icons/fa";
 import { Button, Modal, Input } from "antd";
 import Header from "./Header";
 import { Link } from "react-router-dom";
@@ -54,7 +54,7 @@ export default function Dashboard() {
       {/**End of header section */}
       <div className="mb-5 flex flex-row items-end justify-end">
      <Link to='/new_transcripts'>
-      <button className="py-2 px-4 flex flex-row items-center justify-center bg-gray-800 text-white rounded-md  hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+      <button className="py-2 px-4 flex flex-row items-center justify-center bg-[#012756]  text-white rounded-md  hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
       <FaPlus className="mr-3"/>
       Request Transcript
     </button>
@@ -62,42 +62,42 @@ export default function Dashboard() {
     </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <div className="flex items-center justify-center h-28 bg-gray-800 text-white rounded-md text-5xl font-bold">
+      <div className="bg-white rounded-lg shadow-md p-5">
+        <div className="flex items-center justify-center h-5 bg-white text-black rounded-md text-5xl font-bold">
           2
         </div>
         <div className="flex flex-col items-center justify-center mt-4">
           <p className="text-gray-500 font-medium text-lg mb-2">Submissions</p>
         </div>
         <div className="flex items-center justify-center mt-4">
-          <button className="py-2 px-4 bg-gray-800 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+          <button className="py-2 px-4 bg-white text-black-200 rounded-md border border-w-1 border-black hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
             View
           </button>
         </div>
       </div>
 
       <div className="bg-white rounded-lg shadow-md p-6">
-        <div className="flex items-center justify-center h-28 bg-red-800 text-white rounded-md text-5xl font-bold">
-          1
+        <div className="flex items-center justify-center h-5 bg-white text-red-500 rounded-md text-5xl font-bold">
+          0
         </div>
         <div className="flex flex-col items-center justify-center mt-4">
-          <p className="text-gray-500 font-medium text-lg mb-2">Queried</p>
+          <p className="text-red-500 font-medium text-lg mb-2">Queried</p>
         </div>
         <div className="flex items-center justify-center mt-4">
-          <button className="py-2 px-4 bg-red-500 text-white rounded-md hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+          <button className="py-2 px-4 bg-white text-red-500 rounded-md border border-w-1 border-black hover:bg-red-800 hover:text-white  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
             View
           </button>
         </div>
       </div>
       <div className="bg-white rounded-lg shadow-md p-6">
-        <div className="flex items-center justify-center h-28 bg-green-800 text-white rounded-md text-5xl font-bold">
+        <div className="flex items-center justify-center h-5 bg-white text-green-500 rounded-md text-5xl font-bold">
           1
         </div>
         <div className="flex flex-col items-center justify-center mt-4">
-          <p className="text-gray-500 font-medium text-lg mb-2">Approved</p>
+          <p className="text-green-500 font-medium text-lg mb-2">Approved</p>
         </div>
         <div className="flex items-center justify-center mt-4">
-          <button className="py-2 px-4 bg-green-500 text-white rounded-md hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+          <button className="py-2 px-4 bg-white text-green-500 border border-w-1 border-black rounded-md hover:bg-green-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
             View
           </button>
         </div>

@@ -13,7 +13,7 @@ export default function SideMenu(onLogOut) {
 
 
   return (
-    <div className="w-64 h-screen bg-gray-800">
+    <div className="w-64 h-screen bg-[#012756] box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25)">
       <div className="flex-1 p-6 mb-40">
         <div className="mb-14">
         <p class='text-white text-xl mb-2'>RecordDigita</p>
@@ -31,7 +31,7 @@ export default function SideMenu(onLogOut) {
             </Link>
           </li>
           <li className="mb-7">
-          <Link to="/track" className="flex items-center text-white">
+          <Link to="/track_list" activeClassName='bg-white text-black' className="flex items-center text-white">
             <FaChartLine className="mr-2" /> Track
           </Link>
         </li>
