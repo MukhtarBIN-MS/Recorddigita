@@ -1,5 +1,5 @@
 import React from 'react'
-import profile from '../Images/no-avatar.jpg';
+import profile from '../../Images/no-avatar.jpg';
 import { FaBell, FaList } from "react-icons/fa";
 export default function Header() {
   return (

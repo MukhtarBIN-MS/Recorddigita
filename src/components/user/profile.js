@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../Images/no-avatar.jpg";
+import profile from "../../Images/no-avatar.jpg";
 import Header from "./Header";
 
 export default function Profile() {

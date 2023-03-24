@@ -1,20 +1,23 @@
 import React, {useState} from "react";
-import SideMenu from "./SideMenu";
+import SideMenu from "../components/user/SideMenu";
 import { Routes,  Route} from "react-router-dom";
-import UserHome from "./Dashboard";
-import History from "./History";
-import MyTranscripts from "./MyTranscripts";
-import NewTranscript from "./NewTranscript";
-import Login from "./Login";
-import Register from "./Register";
-import Track from "./Track";
-import HolderInfo from "./HolderInfo";
-import RequestDetails from "./RequestDetails";
-import Profile from "./profile";
-import TrackList from "./TrackList";
+import UserHome from "../components/user/Dashboard";
+import History from "../components/user/History";
+import MyTranscripts from "../components/user/MyTranscripts";
+import NewTranscript from "../components/user/NewTranscript";
+import Login from "../components/user/Login";
+import Register from "../components/user/Register";
+import Track from "../components/user/Track";
+import HolderInfo from "../components/user/HolderInfo";
+import RequestDetails from "../components/user/RequestDetails";
+import Profile from "../components/user/profile";
+import TrackList from "../components/user/profile";
+import ExRLogin from "./exams-record/Login";
+import ExRRegister from "./exams-record/Register";
 
 export default function Home() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // track whether user is logged in or not
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const [exam, setIsExam] = useState(false);// track whether user is logged in or not
 
   const handleLogin = () => {
     setIsLoggedIn(true); // set isLoggedIn to true when user logs in
@@ -46,7 +49,8 @@ export default function Home() {
       ) : (
         <Routes>
         <Route path="/" element={<Login onLogin={handleLogin} /> } />
-        <Route path="/register" element={<Register /> } />  // show login component if user is not logged in
+        <Route path="/register" element={<Register /> } /> 
+        <Route path="/exam-records/login" element={<ExRLogin /> } /> 
         </Routes>
       )}
     </div>
