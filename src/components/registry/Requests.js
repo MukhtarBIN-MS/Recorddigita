@@ -8,20 +8,34 @@ import {
   TableRow,
   TableCell,
 } from "@windmill/react-ui";
-import { FaDownload, FaEllipsisV, FaSearch } from "react-icons/fa";
+import { FaDownload, FaEllipsisV, FaSearch  } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const docs = [
   {
-    id: "EEP/565/JK/0987",
+    id: "EEP/89/BV/9087",
     DateRecieved: "11-07-2022",
     Degree: "Msc",
     Request_type: "Other",
-    status: "Approved",
+    status: "Pending",
+  },
+  {
+    id: "EEP/89/BV/9087",
+    DateRecieved: "11-07-2022",
+    Degree: "Msc",
+    Request_type: "Other",
+    status: "Queried",
+  },
+  {
+    id: "EEP/89/BV/9087",
+    DateRecieved: "11-07-2022",
+    Degree: "Msc",
+    Request_type: "Other",
+    status: "Pending",
   },
 ];
 
-export default function Approved() {
+export default function Requests() {
   const [searchText, setSearchText] = useState("");
 
   const handleInputChange = (event) => {
@@ -43,25 +57,25 @@ export default function Approved() {
         />
       </div>
     </div>
-      <h2 className="font-bold text-2xl font-sans">Approved Transcripts</h2>
+      <h2 className="font-bold text-2xl">Pending Request</h2>
       <div className="w-full lg: py-8">
         <TableContainer>
           <Table className="w-full whitespace-nowrap">
             <TableHeader>
               <TableRow>
-                <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left font-sans text-xs font-medium text-black uppercase tracking-wider">
+                <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left text-xs font-medium text-black uppercase tracking-wider">
                   Matric No
                 </TableCell>
-                <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left  font-sans text-xs font-medium text-black uppercase tracking-wider">
+                <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left text-xs font-medium text-black uppercase tracking-wider">
                   Date Recieved
                 </TableCell>
-                <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left font-sans text-xs font-medium text-black uppercase tracking-wider">
+                <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left text-xs font-medium text-black uppercase tracking-wider">
                   Request Type
                 </TableCell>
-                <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left font-sans text-xs font-medium text-black uppercase tracking-wider">
+                <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left text-xs font-medium text-black uppercase tracking-wider">
                   Degree
                 </TableCell>
-                <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left font-sans text-xs font-medium text-black uppercase tracking-wider">
+                <TableCell className="px-6 py-3 border-b-2 border-gray-200 bg-gray-50 text-left text-xs font-medium text-black uppercase tracking-wider">
                   Status
                 </TableCell>
               </TableRow>
@@ -71,25 +85,26 @@ export default function Approved() {
                 <TableRow key={doc.id}>
                   <TableCell>
                     <div className="text-1xl">
-                      <span className="font-semibold ml-2 font-sans">{doc.id}</span>
+                      <span className="font-semibold ml-2">{doc.id}</span>
                     </div>
                   </TableCell>
                   <TableCell>
-                    <span className="text-1xl ml-2 font-sans">{doc.DateRecieved}</span>
+                    <span className="text-1xl ml-2">{doc.DateRecieved}</span>
                   </TableCell>
                   <TableCell>
-                    <span className="text-1xl ml-2 font-sans">{doc.Request_type}</span>
+                    <span className="text-1xl ml-2">{doc.Request_type}</span>
                   </TableCell>
                   <TableCell>
-                    <span className="text-1xl ml-2 font-sans">{doc.Degree}</span>
+                    <span className="text-1xl ml-2">{doc.Degree}</span>
                   </TableCell>
                   <TableCell className="flex flex-row justify-between">
                     <span
-                      className= 'text-green-500 text-1xl ml-2 mt-2 font-sans'>
+                      className={doc.status ==='Pending' ? 'text-1xl ml-2 text-yellow-500': 'text-1xl ml-2 text-red-500' }
+                    >
                       {doc.status}
                     </span>
-                    <Link to="/approved">
-                      <button className="py-2 px-4 bg-[#012756] font-sans  text-white rounded-md border border-w-1 border-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    <Link to="/request_view">
+                      <button className="py-2 px-4 bg-[#012756]  text-white rounded-md border border-w-1 border-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                         View
                       </button>
                     </Link>

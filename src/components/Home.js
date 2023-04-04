@@ -13,7 +13,7 @@ import RequestDetails from "../components/user/RequestDetails";
 import Profile from "../components/user/profile";
 import TrackList from "../components/user/profile";
 import ExRLogin from "./exams-record/Login";
-import ExRRegister from "./exams-record/Register";
+import ExRRegister from "./exams-record/Requests";
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); 

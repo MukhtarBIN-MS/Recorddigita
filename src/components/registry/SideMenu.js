@@ -32,13 +32,18 @@ export default function SideMenu(onLogOut) {
             </Link>
           </li>
           <li className="mb-7">
-          <Link to="/processing" activeClassName='bg-white text-black' className="flex items-center text-white">
-            <FaChartLine className="mr-2" /> Processing
+          <Link to="/track_list" activeClassName='bg-white text-black' className="flex items-center text-white">
+            <FaChartLine className="mr-2" /> Track
           </Link>
         </li>
+        <li className="mb-7">
+        <Link to="/processed" activeClassName='bg-white text-black' className="flex items-center text-white">
+          <FaChartLine className="mr-2" /> Processed
+        </Link>
+      </li>
           <li className="mb-7">
-          <Link to="/approved" className="flex items-center text-white">
-            <FaCheckSquare className="mr-2" /> Processed
+          <Link to="/approved_list" className="flex items-center text-white">
+            <FaCheckSquare className="mr-2" /> Approved
           </Link>
         </li> 
           <li className="mb-7">
