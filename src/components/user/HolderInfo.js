@@ -110,7 +110,7 @@ function HolderInfo() {
             <Link to="/request_details">
               <button
                 onClick={handleButtonClick}
-                className="mt-3 bg-blue-500 hover:bg-blue-700 flex items-center justify-center text-white font-bold py-2 px-4 rounded"
+                className="mt-3 bg-[#012756] hover:bg-blue-700 flex items-center justify-center text-white font-bold py-2 px-4 rounded"
               >
                 Next
               </button>

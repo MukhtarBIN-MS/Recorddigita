@@ -11,9 +11,9 @@ import Track from "../components/user/Track";
 import HolderInfo from "../components/user/HolderInfo";
 import RequestDetails from "../components/user/RequestDetails";
 import Profile from "../components/user/profile";
-import TrackList from "../components/user/profile";
+import TrackList from "../components/user/TrackList";
 import ExRLogin from "./exams-record/Login";
-import ExRRegister from "./exams-record/Requests";
+
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); 

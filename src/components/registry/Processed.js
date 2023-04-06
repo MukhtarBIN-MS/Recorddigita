@@ -103,7 +103,7 @@ export default function Processed() {
                     >
                       {doc.status}
                     </span>
-                    <Link to="/request_view">
+                    <Link to="/track">
                       <button className="py-2 px-4 bg-[#012756]  text-white rounded-md border border-w-1 border-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                         View
                       </button>

@@ -1,12 +1,31 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import { Button, Modal } from "antd";
 
 import Header from "./Header";
 function HolderInfo() {
   const [selectedValue, setSelectedValue] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [showButton, setShowButton] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const showModal = () => {
+    setOpen(true);
+  };
+
+  const handleOk = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setOpen(false);
+    }, 3000);
+  };
+
+  const handleCancel = () => {
+    setOpen(false);
+  };
 
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
@@ -72,39 +91,68 @@ function HolderInfo() {
             </option>
           </select>
           <label htmlFor="name" className="font-medium">
-          Reciever Email
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="border border-gray-300 rounded-md px-3 py-2"
-        />
-        <label htmlFor="name" className="font-medium">
-        Reciever Address
-      </label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        className="border border-gray-300 rounded-md px-3 py-2"
-      />
+            Reciever Email
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="border border-gray-300 rounded-md px-3 py-2"
+          />
+          <label htmlFor="name" className="font-medium">
+            Reciever Address
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="border border-gray-300 rounded-md px-3 py-2"
+          />
         </form>
 
         {showButton && (
           <div className="items-center justify-center">
             <button
-              onClick={handleButtonClick}
-              className="mt-3 bg-blue-500 hover:bg-blue-700 flex items-center justify-center text-white font-bold py-2 px-4 rounded"
+              onClick={showModal}
+              className="mt-3 bg-[#012756] hover:bg-blue-700 flex items-center justify-center text-white font-bold py-2 px-4 rounded"
             >
-              Submit
+              Proceed
             </button>
           </div>
         )}
+      </div>
+      <div className="flex flex-col items-center justify-center">
+        <Modal
+          open={open}
+          title="Title"
+          onOk={handleOk}
+          onCancel={handleCancel}
+          footer={[
+            <div className="flex flex-row items-center justify-center">
+            <Button key="back"  className="bg-gray-500 text-white" onClick={handleCancel}>
+              Pay later
+            </Button>,
+            <Button
+              key="submit"
+              className="bg-[#012756] text-white"
+              loading={loading}
+              onClick={handleOk}
+            >
+              Pay Now
+            </Button>,
+            </div>
+          ]}
+        >
+          <div className="flex flex-col items-center justify-center">
+          <h4 className="text-2xl font-bold">Request Saved</h4>
+          <img style={{width:100, height:100, margingBottom:5}} src={require('../../Images/success.png')}/>
+          <p className="text-center mb-3">Your request has been saved Successfully! <br/> Proceed to make payment to confirm your request</p>
+          </div>
+        </Modal>
       </div>
     </div>
   );

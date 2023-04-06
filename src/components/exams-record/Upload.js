@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import { Button, Modal } from "antd";
 
 export default function Upload() {
+  const [loading, setLoading] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [open, setOpen] = useState(false);
+
+  const showModal = () => {
+    setOpen(true);
+  };
+
+  const handleFileChange = (e) => {
+    setSelectedFile(e.target.files[0]);
+  };
+
+  const handleOk = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setOpen(false);
+    }, 3000);
+  };
+
+  const handleCancel = () => {
+    setOpen(false);
+  };
+
   const navigate = useNavigate();
 
   const handleGoBack = () => {
@@ -49,8 +74,7 @@ export default function Upload() {
             <p>Amount paid: </p>
           </div>
 
-          <div className="flex flex-col">
-          </div>
+          <div className="flex flex-col"></div>
 
           <div className="flex flex-col">
             <p className="mt-2 font-bold">Verification Officer:</p>
@@ -61,9 +85,41 @@ export default function Upload() {
         </div>
       </div>
       <div className="flex flex-row items-center mt-5 justify-end">
-        <button className="py-2 px-4 bg-[#012756] text-white border mr-10 border-w-1 border-black rounded-md hover:bg-red-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+        <button
+          onClick={showModal}
+          className="py-2 px-4 bg-[#012756] text-white border mr-10 border-w-1 border-black rounded-md hover:bg-red-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+        >
           Upload
         </button>
+      </div>
+      <div className="flex items-center justify-center">
+        <Modal
+          open={open}
+          title=""
+          onOk={handleOk}
+          onCancel={handleCancel}
+          footer={[
+            <div className="flex items-center justify-center">
+              <Button key="back" className="bg-[#012756] text-white" onClick={handleCancel}>
+                Upload
+              </Button>
+            </div>,
+          ]}
+        >
+          <div className="t-10 mt-10 mb-10 border-r-10 rounded-lg p-2 font-bold text-2xl bg-[#012756] text-white w-full text-center">
+            Upload Transcript
+          </div>
+          <div className="flex flex-row items-center justify-center mb-5">
+            <input
+              type="file"
+              id="file"
+              name="file"
+              value={selectedFile}
+              onChange={handleFileChange}
+              className="border border-gray-300 rounded-md px-3 py-2"
+            />
+          </div>
+        </Modal>
       </div>
     </div>
   );

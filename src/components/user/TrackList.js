@@ -21,7 +21,7 @@ const docs = [
   },
 ];
 
-export default function History() {
+export default function TrackList() {
   return (
     <div className="px-5 py-5">
       <Header />
