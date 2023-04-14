@@ -1,5 +1,5 @@
 import React from "react";
-import User from "./components/Home";
+import User from "./components/User";
 // import ExamsRecord from "./components/ExamsRecord";
 // import Registry from "./components/Registry";
 // import Admin from "./components/Admin";
@@ -9,7 +9,7 @@ function App() {
     <div>
       {/** The App Entry is Currently on the User, There will be a place where when each user
        e.g Registry, ExamRecords click a button will navigate to his endpoint to access his dashboard*/}
-       
+
       <User />
     </div>
   );
