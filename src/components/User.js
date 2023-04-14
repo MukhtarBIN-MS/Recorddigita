@@ -1,21 +1,21 @@
 import React, {useState} from "react";
-import SideMenu from "../components/user/SideMenu";
+import SideMenu from "./user/SideMenu";
 import { Routes,  Route} from "react-router-dom";
-import UserHome from "../components/user/Dashboard";
-import History from "../components/user/History";
-import MyTranscripts from "../components/user/MyTranscripts";
-import NewTranscript from "../components/user/NewTranscript";
-import Login from "../components/user/Login";
-import Register from "../components/user/Register";
-import Track from "../components/user/Track";
-import HolderInfo from "../components/user/HolderInfo";
-import RequestDetails from "../components/user/RequestDetails";
-import Profile from "../components/user/profile";
-import TrackList from "../components/user/TrackList";
+import UserHome from "./user/Dashboard";
+import History from "./user/History";
+import MyTranscripts from "./user/MyTranscripts";
+import NewTranscript from "./user/NewTranscript";
+import Login from "./user/Login";
+import Register from "./user/Register";
+import Track from "./user/Track";
+import HolderInfo from "./user/HolderInfo";
+import RequestDetails from "./user/RequestDetails";
+import Profile from "./user/profile";
+import TrackList from "./user/TrackList";
 import ExRLogin from "./exams-record/Login";
 
 
-export default function Home() {
+export default function User() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); 
   const [exam, setIsExam] = useState(false);// track whether user is logged in or not
 

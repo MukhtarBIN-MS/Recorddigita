@@ -1,16 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 
 export default function Register() {
+
+  const [matric, setMatric] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [repassword, setRePassword] = useState("");
+
+
   return (
     <div>
       <div className=" min-h-screen bg-gray-100 flex flex-col sm:rounded-lg justify-center py-12 sm:px-6 lg:px-8">
         <div className="bg-[#012756] sm:mx-auto sm:w-full sm:max-w-md">
           <h2 className="mt-6 text-center text-3xl font-extrabold text-white">
-            Sign In
+            Sign Up
           </h2>
           <p className="text-center text-white">
-            Sign in to access your dashboard
+            Sign Up to register
           </p>
 
           <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -25,9 +32,11 @@ export default function Register() {
                   </label>{" "}
                   <div className="mt-1">
                     <input
-                      id="email"
-                      name="email"
-                      type="email"
+                      id="matric"
+                      name="matric"
+                      type="text"
+                      value={matric}
+                      onChange={(e) => setMatric(e.target.value)}
                       autoComplete="email"
                       required
                       className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
@@ -43,9 +52,11 @@ export default function Register() {
                   </label>{" "}
                   <div className="mt-1">
                     <input
-                      id="email"
-                      name="email"
+                      id="name"
+                      name="name"
                       type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       autoComplete="false"
                       required
                       className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
@@ -65,6 +76,8 @@ export default function Register() {
                       id="password"
                       name="password"
                       type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       autoComplete="current-password"
                       required
                       className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
@@ -83,6 +96,8 @@ export default function Register() {
                       id="password"
                       name="password"
                       type="password"
+                      value={repassword}
+                      onChange={(e) => setRePassword(e.target.value)}
                       autoComplete="current-password"
                       required
                       className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"

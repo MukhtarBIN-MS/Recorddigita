@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 
 export default function Login(props) {
+
+  const [matric, setMatric] = useState("");
+  const [password, setPassword] = useState("");
+
+  // Recievng Prop from Parent To Recieve the onLogin prop
   const handleSubmit = (event) => {
     event.preventDefault();
     props.onLogin();
@@ -29,9 +34,11 @@ export default function Login(props) {
                   </label>{" "}
                   <div className="mt-1">
                     <input
-                      id="email"
-                      name="email"
-                      type="email"
+                      id="matric"
+                      name="matric"
+                      type="text"
+                      value={matric}
+                      onChange={(e) => setMatric(e.target.value)}
                       autoComplete="email"
                       required
                       className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
@@ -51,6 +58,8 @@ export default function Login(props) {
                       id="password"
                       name="password"
                       type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       autoComplete="current-password"
                       required
                       className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"

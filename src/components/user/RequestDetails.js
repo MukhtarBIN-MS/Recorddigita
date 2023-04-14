@@ -43,8 +43,8 @@ function HolderInfo() {
   const handleGoBack = () => {
     navigate(-1);
   };
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [recieverMail, setRecieverMail] = useState("");
+  const [recieverAddress, setRecieverAddress] = useState("");
   const [password, setPassword] = useState("");
 
   const handleFileChange = (e) => {
@@ -90,15 +90,15 @@ function HolderInfo() {
               Courirer Services & Upload To My Profile
             </option>
           </select>
-          <label htmlFor="name" className="font-medium">
+          <label htmlFor="reciever" className="font-medium">
             Reciever Email
           </label>
           <input
             type="text"
-            id="name"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            id="reciever_mail"
+            name="reciever_mail"
+            value={recieverMail}
+            onChange={(e) => setRecieverMail(e.target.value)}
             className="border border-gray-300 rounded-md px-3 py-2"
           />
           <label htmlFor="name" className="font-medium">
@@ -108,8 +108,8 @@ function HolderInfo() {
             type="text"
             id="name"
             name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={recieverAddress}
+            onChange={(e) => setRecieverAddress(e.target.value)}
             className="border border-gray-300 rounded-md px-3 py-2"
           />
         </form>
@@ -125,6 +125,9 @@ function HolderInfo() {
           </div>
         )}
       </div>
+
+      {/** This Modal will only open when the user finish submitting his details*/}
+      
       <div className="flex flex-col items-center justify-center">
         <Modal
           open={open}

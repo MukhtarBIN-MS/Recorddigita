@@ -18,7 +18,6 @@ function HolderInfo() {
     console.log(selectedValue);
   };
 
-  const location = useLocation();
   const navigate = useNavigate();
 
   const handleGoBack = () => {
@@ -46,6 +45,9 @@ function HolderInfo() {
       </div>
       <div className="w-full mt-5 flex flex-col items-center justify-center">
         <h2 className="text-2xl items-start font-bold mb-4">Holder Info</h2>
+        
+        {/**Holder Info Form */}
+
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <label for="institution">Select Institution</label>
           <select
@@ -99,12 +101,14 @@ function HolderInfo() {
           <input
             type="file"
             id="file"
+            value={selectedFile}
             name="file"
             onChange={handleFileChange}
             className="border border-gray-300 rounded-md px-3 py-2"
           />
         </form>
 
+           {/**If there is any Input Show Next Button*/}
         {showButton && (
           <div>
             <Link to="/request_details">

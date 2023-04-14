@@ -10,6 +10,8 @@ import {
 } from "@windmill/react-ui";
 import { FaDownload } from "react-icons/fa";
 
+// Some dummy data generated for Transcripts
+
 const docs = [
   {
     id: "QwdSKDK743849",

@@ -133,7 +133,7 @@ export default function Request_view() {
             >
               <label for="institution">Reason for query</label>
               <select
-                value={selectedValue}
+                value={selectedValue} 
                 onChange={handleSelectChange}
                 className="w-full border border-gray-400 rounded p-2 mb-2"
               >
