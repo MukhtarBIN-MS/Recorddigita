@@ -7,7 +7,7 @@ export default function Header() {
     <div class=" flex flex-row justify-between">
       <div className='flex flex-row items-center justify-center'>
       <FaList className="mr-3 w-7 h-7 mt-2" />
-        <h3 class="px-5 text-4xl font-bold">RecordDigita</h3>
+        <h3 class="px-5 text-4xl font-bold">QuickTranscript</h3>
       </div>
       <div class="flex flex-row items-center w-40 justify-between">
       <FaBell className="items-center justify-center w-5 h-5" />
