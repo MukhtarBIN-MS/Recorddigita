@@ -36,7 +36,11 @@ function HolderInfo() {
     e.preventDefault();
     console.log("Form submitted");
   };
-
+ 
+  const handleSayHello = (e) =>{
+    e.preventDefault()
+    console.log(`${e} Hello`)
+  }
   return (
     <div class="px-5 py-5">
       <Header />
